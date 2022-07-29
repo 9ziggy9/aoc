@@ -70,4 +70,10 @@
 
 ;; how to read files:
 ;; racket has a list comprehension sort of deal.
-()
+;; What a thunk actually IS
+;; -- injecting lambda into with-output-from-file procedure
+(define (read-problem file-path)
+  (printf "Input file: ~a\n" file-path)
+  (for ([line (file->lines file-path)])
+    (println line)))
+(read-problem "./hello.txt")
