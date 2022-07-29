@@ -76,4 +76,5 @@
   (printf "Input file: ~a\n" file-path)
   (for ([line (file->lines file-path)])
     (println line)))
+
 (read-problem "./hello.txt")
