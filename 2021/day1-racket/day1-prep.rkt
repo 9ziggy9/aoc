@@ -56,3 +56,18 @@
 (nobake "green") ;; "jello"
 
 ;; Within nobake, there are no parentheses around string-append flavor "jello", so they are three separate expressions instead of one function-call expression. The expressions string-append and flavor are evaluated, but the results are never used. Instead, the result of the function is just the result of the final expression, "jello".
+
+;; like most lisps, few identifier rules!
+;; () [] {} " , ' ` ; # | \ are not allowed.
+
+;; these are ALL legal:
+;; +
+;; integer?
+;; pass/fail
+;; Hfuhruhurr&Uumellmahaye
+;; john-jacob-jingleheimer-schmidt
+;; a-b-c+1-2-3
+
+;; how to read files:
+;; racket has a list comprehension sort of deal.
+()
