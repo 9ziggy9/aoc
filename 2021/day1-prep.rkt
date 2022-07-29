@@ -41,3 +41,18 @@
   (substring fruits 0 5)) ;; zero indexing
 
 (1stFruit "apple orange banana")
+
+;; Note that in racket, side-effects are quite trivial.
+
+(define (bake flavor)
+  (printf "preheating oven...\n") ;; print to stdout
+  (string-append flavor " pie"))
+(bake "apple")
+;; if you want no sideffects, only one expression
+;; to a body!
+
+(define (nobake flavor)
+  string-append flavor "jello")
+(nobake "green") ;; "jello"
+
+;; Within nobake, there are no parentheses around string-append flavor "jello", so they are three separate expressions instead of one function-call expression. The expressions string-append and flavor are evaluated, but the results are never used. Instead, the result of the function is just the result of the final expression, "jello".
